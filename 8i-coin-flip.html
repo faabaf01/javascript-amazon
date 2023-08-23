@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lesson 8i Exercise</title>
+    </head>
+    <body>
+        <h1>Coin Flip Game</h1>
+
+        <button onclick="
+            playGame('heads')
+        ">heads</button>
+
+        <button onclick="
+            playGame('tails')
+        ">tails</button>
+
+        <script>
+            const score = JSON.parse(localStorage.getItem('score')) || {
+                wins: 0,
+                losses: 0
+            }
+
+            function playGame(guess) {
+                const randNum = Math.random();
+                const result = randNum < 0.5 ? 'heads' : 'tails';
+                
+                // console.log(randNum)
+                console.log('Result: ',result)
+
+                if (guess === result) {
+                    console.log('You win!')
+                    score.wins++;
+                }  else {
+                    console.log('You lose!')
+                    score.losses++;
+                }
+
+                localStorage.setItem('score', JSON.stringify(score))
+                console.log(`Wins: ${score.wins}, Losses: ${score.losses} `)
+            }
+
+
+      
+        </script>
+    </body>
+</html>
+
+
+

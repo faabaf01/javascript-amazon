@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Website</title>
+        <style>
+            .red-button {
+                background-color: red;
+                color: white;
+                border: none;
+            }
+
+            .yellow-button {
+                background-color: yellow;
+            }
+            .orange-button {
+                background-color: orange;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- <button title="good job!" class="red-button" onclick="
+            alert('Good morning');
+            ">hello</button> -->
+        <p>Adults Plain Cotton T-shirt</p>
+            <p>Price: $7.99</p>
+            <button class="yellow-button" onclick="alert('Added')">Add to cart</button>
+            <button class="orange-button" onclick=" console.log('Loading...');
+            alert('Purchased');">Buy now</button>
+        <script>
+            // alert('Welcome!')
+            const product1 = {
+                name: 'basketball',
+                price: 2895
+            }  
+            const product2 = {
+                name: 'sport tshirt',
+                price: 3740
+            }  
+            const product3 = {
+                name: 'basketball',
+                price: 2895
+            }  
+
+            // products.price += 500;
+            // products['delivery-time'] = '3 days'
+            // console.log(products)
+
+            function comparePrice(product1, product2) {
+                if (product1.price > product2.price) {
+                    return product2;
+                } else {
+                    return product1;
+                }
+            }
+
+            console.log(comparePrice(product1, product2))
+
+            /*
+            function isSameProduct(product1, product2) {
+                if (product1.name === product2.name && product1.price === product2.price) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+            */
+            function isSameProduct(product1, product2) {
+                return (product1.name === product2.name && product1.price === product2.price)
+            }
+            console.log(isSameProduct(product1, product2))
+            console.log(isSameProduct(product1, product3))
+            console.log(isSameProduct(product2, product3))
+
+            console.log('Good Morning'.toLowerCase())
+            console.log('test'.repeat(6))
+        </script>
+    </body>
+</html>
+
+
+

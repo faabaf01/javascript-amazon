@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Booleans</title>
+    </head>
+    <body>
+        <p>Rock Paper Scissors Game</p>
+        
+        <button onclick="
+            playGame('rock')
+        ">Rock</button>
+
+        <button onclick="
+            playGame('paper')
+        ">Paper</button>
+
+        <button onclick="
+           playGame('scissors')
+        ">Scissors</button>
+
+        <script>
+            //script here runs when page is loaded
+
+            //global variable
+            //let computerMove = '';
+
+            function pickComputerMove() {
+                const randomNumber = Math.random();
+                let computerMove = '';
+                
+                if (randomNumber >= 0 && randomNumber < 1/3) {
+                    computerMove = 'rock';
+                } else if (randomNumber >= 1/3 && randomNumber < 2/3 ) {
+                    computerMove = 'paper';
+                } else if (randomNumber >= 2/3 && randomNumber < 1) {
+                    computerMove = 'scissors';
+                }
+
+                //more preferred to return a variable
+                //scope can prevent naming conflicts
+                return computerMove;
+
+                //JS best practice: keep variables inside a scope
+                //HTML best practice: semantic HTML, using specific tags like nav, header, footer..
+            }
+
+            function playGame(userMove) {
+                const computerMove = pickComputerMove();
+
+                let result = ''; 
+
+                if (userMove === 'rock') {
+                    if (computerMove === 'rock') {
+                        result = `Oops it's a tie.`;
+                    } else if (computerMove === 'paper') {
+                        result = 'You lose!';
+                    } else if (computerMove === 'scissors') {
+                        result = 'You won!';
+                    }
+
+                } else if (userMove === 'paper') {
+
+                    if (computerMove === 'rock') {
+                        result = `You won!`;
+                    } else if (computerMove === 'paper') {
+                        result = `Oops it's a tie.`;
+                    } else if (computerMove === 'scissors') {
+                        result = 'You lose!';
+                    }
+
+                } else if (userMove === 'scissors') {
+
+                    if (computerMove === 'rock') {
+                    result = `You lose!`;
+                    } else if (computerMove === 'paper') {
+                        result = 'You won!';
+                    } else if (computerMove === 'scissors') {
+                        result = `Oops it's a tie.`;
+                    }
+                }
+
+                alert(`You picked ${userMove}. Computer picked ${computerMove}. ${result}`);
+            }
+        </script>
+    </body>
+</html>
+
+
+
