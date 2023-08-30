@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10f</title>
+    <style>
+        .toggle-button {
+            background-color: rgb(230, 230, 230);
+            padding: 12px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+        .is-toggled {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <button class="toggle-button js-button1" onclick="toggleButton('.js-button1')">
+        Gaming
+    </button>
+    <button class="toggle-button js-button2" onclick="toggleButton('.js-button2')">
+        Music
+    </button>
+    <button class="toggle-button js-button3" onclick="toggleButton('.js-button3')">
+        Tech
+    </button>
+
+    <script>
+        function toggleButton(selector) {
+            const buttonElem = document.querySelector(selector)
+            if (!buttonElem.classList.contains('is-toggled')) {
+                buttonElem.classList.add('is-toggled')
+            } else {
+                buttonElem.classList.remove('is-toggled')
+            }
+        }
+    </script>
+</body>
+</html>
+<!-- 8:21 -->
